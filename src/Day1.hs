@@ -1,7 +1,8 @@
-module Lib
+module Day1
     ( readIntCode
     , find2020
     ) where
+
 
 readIntCode :: String -> IO [Int]
 readIntCode filename = wordsToInts . words <$> readFile filename

@@ -1,6 +1,6 @@
-name:                day1
+name:                aoc
 version:             0.1.0.0
-github:              "githubuser/day1"
+github:              "githubuser/aoc"
 license:             BSD3
 author:              "Author name here"
 maintainer:          "example@example.com"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/day1#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/aoc#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -26,7 +26,7 @@ library:
   source-dirs: src
 
 executables:
-  day1-exe:
+  aoc-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -34,10 +34,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - day1
+    - aoc
 
 tests:
-  day1-test:
+  aoc-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -45,4 +45,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - day1
+    - aoc

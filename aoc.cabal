@@ -4,13 +4,13 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ebb2ec10015fe817caf653536648dbc8a849a41dbf1af501a46caaeafe54d0e4
+-- hash: 7f5c8923a624038d328325e1ff7103fce8720308175ea2daf1cf5a6679a1dde4
 
-name:           day1
+name:           aoc
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/day1#readme>
-homepage:       https://github.com/githubuser/day1#readme
-bug-reports:    https://github.com/githubuser/day1/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/aoc#readme>
+homepage:       https://github.com/githubuser/aoc#readme
+bug-reports:    https://github.com/githubuser/aoc/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2020 Author name here
@@ -23,40 +23,43 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/day1
+  location: https://github.com/githubuser/aoc
 
 library
   exposed-modules:
+      Day1
+      Day2
+      Input
       Lib
   other-modules:
-      Paths_day1
+      Paths_aoc
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable day1-exe
+executable aoc-exe
   main-is: Main.hs
   other-modules:
-      Paths_day1
+      Paths_aoc
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
-    , day1
+      aoc
+    , base >=4.7 && <5
   default-language: Haskell2010
 
-test-suite day1-test
+test-suite aoc-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_day1
+      Paths_aoc
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
-    , day1
+      aoc
+    , base >=4.7 && <5
   default-language: Haskell2010

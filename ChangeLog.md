@@ -1,3 +1,3 @@
-# Changelog for day2
+# Changelog for aoc
 
 ## Unreleased changes
