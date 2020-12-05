@@ -6,13 +6,6 @@ binToDec :: Int -> Int
 binToDec 0 = 0
 binToDec i = 2 * binToDec (div i 10) + mod i 10
 
--- decToBin :: Int -> Int
--- decToBin 0 = [0]
--- decToBin n = go n
---   where
---     go 0 = []
---     go k = mod k 2 : go (div k 2)
-
 toRow :: String -> Int
 toRow xs = binToDec $ read $ toRowString xs
   where
