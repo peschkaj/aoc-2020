@@ -4,7 +4,6 @@ import Data.Char (isHexDigit, isDigit)
 import Data.Map (Map)
 import qualified Data.Map as Map
 import Data.List.Split
-import Control.Arrow (second)
 import Text.Read (readMaybe)
 
 type Passport = Map String String
@@ -12,11 +11,13 @@ type Passport = Map String String
 count :: (a -> Bool) -> [a] -> Int
 count p = length . filter p
 
-splitOnOne :: Char -> String -> (String, String)
-splitOnOne c = second (drop 1) . break (== c)
+toKVPair :: String -> (String, String)
+toKVPair xs = (k, v)
+  where
+    [k, v] = splitOn ":" xs
 
 mkPassport :: [String] -> Passport
-mkPassport = Map.fromList . map (splitOnOne ':')
+mkPassport = Map.fromList . map toKVPair
 
 numBetween :: Int -> Int -> String -> Bool
 numBetween l r s = maybe False (\n -> l <= n && n <= r) (readMaybe s)
